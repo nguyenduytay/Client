@@ -5,14 +5,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="67.0" prefWidth="600.0">
+      <HBox prefHeight="124.0" prefWidth="394.0">
          <children>
-            <Avatar>
+            <Avatar id="avata" radius="25.0">
                <HBox.margin>
-                  <Insets left="10.0" top="5.0" />
+                  <Insets left="175.0" top="40.0" />
                </HBox.margin>
             </Avatar>
          </children>
