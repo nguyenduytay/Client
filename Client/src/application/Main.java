@@ -13,7 +13,7 @@ public class Main extends Application {
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,400,500);
 		    //duy tay sưa 19/9
-			//thanh vinh
+			//thanh vinh 19/9
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
