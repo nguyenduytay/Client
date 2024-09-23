@@ -12,12 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class Controller_MainClient {
-	 private final Image blackImage = new Image(getClass().getResourceAsStream("../image/icons8-close-30.png"));
-	 private final Image whiteImage = new Image(getClass().getResourceAsStream("../image/icons8-close-30-white.png"));
-
-	@FXML
-	private ImageView closeImageView;
+public class Controller_MainClient extends Controller_Form {
 	@FXML
 	private Label Money_User;
 	@FXML
@@ -39,20 +34,6 @@ public class Controller_MainClient {
 	@FXML
 	private VBox logOut_user;
 	
-	@FXML 
-	public void closeEntered() {
-        closeImageView.setImage(whiteImage);  // Đổi sang ảnh trắng khi hover
-	}
-	@FXML 
-	public void closeExited() {
-        closeImageView.setImage(blackImage);  // Đổi lại ảnh đen khi rời chuột
-	}
-	@FXML 
-	public void closeClicked() {
-		 Stage stage = (Stage)closeImageView.getScene().getWindow();
-         stage.close(); // Đóng ứng dụng	
-	}
-	
 	@FXML
 	public void Click_Service() {
 		
@@ -67,9 +48,9 @@ public class Controller_MainClient {
 			Stage Recharge_Stage = new Stage();
 			 Parent root = FXMLLoader.load(getClass().getResource("../application/Recharge_Client.fxml"));
 			 Recharge_Stage.initStyle(StageStyle.UNDECORATED);  // Tắt thanh tiêu đề
-			 Recharge_Stage.setTitle("Hello World");
-		        Recharge_Stage.setScene(new Scene(root));
-		        Recharge_Stage.show();
+			 Recharge_Stage.setResizable(false);
+		     Recharge_Stage.setScene(new Scene(root));
+		     Recharge_Stage.show();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -79,7 +60,18 @@ public class Controller_MainClient {
 	}
 	@FXML
 	public void Click_Message() {
-		
+		try {
+			Stage Message_Stage = new Stage();
+			 Parent root = FXMLLoader.load(getClass().getResource("../application/Chat_Client.fxml"));
+			 Message_Stage.initStyle(StageStyle.UNDECORATED);  // Tắt thanh tiêu đề
+			 Message_Stage.setResizable(false);
+		     Message_Stage.setScene(new Scene(root));
+		     Message_Stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+
+		}
 	}
 	@FXML
 	public void Click_lockDevice() {
