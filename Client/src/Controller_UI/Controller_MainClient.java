@@ -36,7 +36,18 @@ public class Controller_MainClient extends Controller_Form {
 	
 	@FXML
 	public void Click_Service() {
-		
+		try {
+			Stage FoodMenu_Stage = new Stage();
+			 Parent root = FXMLLoader.load(getClass().getResource("../application/FoodMenu_Client.fxml"));
+			 FoodMenu_Stage.initStyle(StageStyle.UNDECORATED);  // Tắt thanh tiêu đề
+			 FoodMenu_Stage.setResizable(false);
+		     FoodMenu_Stage.setScene(new Scene(root));
+		     FoodMenu_Stage.show();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+
+		}
 	}
 	@FXML
 	public void Click_Combo() {

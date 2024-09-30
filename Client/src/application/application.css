@@ -2,8 +2,20 @@
 .fx-color-red {
 	-fx-background-color : rgb(239, 46, 55);
 }
+.fx-color-black {
+	-fx-background-color : rgb(39,39,42);
+}
+.fx-color-background-black {
+		-fx-background-color : black;
+}
+.text{
+	-fx-text-fill: white;
+}
 .fx-color-blue-light {
 	-fx-background-color:RGB(205, 245, 255);
+}
+.scroll-pane {
+    -fx-background-color: black;
 }
 .text_color_red {
 	-fx-text-fill: rgb(239, 46, 55);
@@ -54,4 +66,9 @@
     -fx-border-color: #333333;      /* Thay đổi viền khi nhấn */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.7, 0, 0); /* Hiệu ứng đổ bóng mạnh hơn */
     -fx-translate-y: 2px;           /* Dịch chuyển nhẹ VBox xuống khi click để tạo hiệu ứng nén */
+}
+.button_menu {
+    -fx-background-color:  rgb(39,39,42);
+    -fx-border-color: transparent;
+    -fx-text-fill:RGB(193, 193, 193);
 }
