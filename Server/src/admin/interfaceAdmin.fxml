@@ -217,5 +217,6 @@
       </AnchorPane>
       <AnchorPane layoutX="1164.0" layoutY="42.0" prefHeight="746.0" prefWidth="20.0" styleClass="root" stylesheets="@applicationAdmin.css" />
       <AnchorPane layoutX="95.0" layoutY="768.0" prefHeight="20.0" prefWidth="1070.0" styleClass="root" stylesheets="@applicationAdmin.css" />
+      //ghi chú
    </children>
 </AnchorPane>
