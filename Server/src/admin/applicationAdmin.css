@@ -1,4 +1,5 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
 .AnchorPane
 {
     -fx-background-color: black;      
@@ -8,7 +9,7 @@
 }
 .text
 {
-	-fx-background-color:#967a7a;
+	-fx-background-color: white;
 }
 .textFieldName
 {
@@ -16,89 +17,11 @@
     -fx-text-fill: white;
     -fx-background-color:black;
 }
-.buttonLogOut
-{
-    -fx-background-image: url("../images/logout.png");
-    -fx-background-size: 70px 60px; /* Hình ảnh phủ kín button */
-    -fx-background-repeat: no-repeat; /* Không lặp lại hình ảnh */
-    -fx-background-position: 10; /* Đặt hình ảnh ở giữa */
-    -fx-alignment: CENTER_RIGHT;
-}
 
 .vboxMenu
 {
     -fx-spacing: 1px;
     -fx-border-color: white;
-    -fx-border-width: 1;
+    -fx-border-width: 0;
     -fx-border-style: solid;
-}
-.buttonMenu
-{
--fx-background-image: url("../images/menuIcon.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonComputer
-{
--fx-background-image: url("../images/pc.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonClient
-{
--fx-background-image: url("../images/location.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonHistory
-{
--fx-background-image: url("../images/history.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonPromotion
-{
--fx-background-image: url("../images/promotion.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonStaff
-{
--fx-background-image: url("../images/staff.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonStatistic
-{
-	-fx-background-image: url("../images/statistic.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonWarehouse
-{
-		-fx-background-image: url("../images/warehouse.png");
--fx-background-size:40px 35px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonCross
-{
--fx-background-image: url("../images/cross.png");
--fx-background-size:25px 25px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
-}
-.buttonDelete
-{
--fx-background-image: url("../images/delete.png");
--fx-background-size:25px 25px;
--fx-background-repeat: no-repeat;
--fx-background-position: 20px;
 }
