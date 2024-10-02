@@ -1,0 +1,27 @@
+.scroll-pane {
+    -fx-background-color: black; /* Màu nền của ScrollPane */
+}
+
+
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 8px; /* Chiều rộng của thanh cuộn dọc */
+    -fx-background-color:  rgb(39,39,42);
+}
+
+/* Thay đổi kích thước thumb (phần có thể kéo) */
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: RGB(59, 59, 59); /* Màu nền cho phần thumb của thanh cuộn dọc */
+    -fx-pref-width: 8px; /* Chiều rộng của thumb dọc */
+    -fx-min-height: 50px; /* Chiều cao tối thiểu cho thumb dọc */
+    -fx-max-height: 100px; /* Chiều cao tối đa cho thumb dọc */
+}
+
+
+/* Tùy chỉnh khoảng cách và đường viền cho thanh cuộn */
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-insets: 0; /* Bỏ khoảng cách */
+    -fx-background-radius: 5; /* Tạo góc bo tròn cho thumb */
+}
+
+
