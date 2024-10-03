@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.SQLException;
+import java.util.List;
 
+import Dto.MenuItemDto;
+import Dto.UserDto;
+import Model.MenuItem;
 import Model.UserAccount;
 
 class ClientHandler extends Thread {
@@ -41,37 +46,65 @@ class ClientHandler extends Thread {
         }
     }
 
-    // Xử lý lệnh từ client
+   
     private void handleCommand(String command) {
-        // Giả sử command là "REGISTER_USER username password"
         String[] parts = command.split(" ");
         String action = parts[0];
-        
+
         switch (action) {
             case "REGISTER_USER":
                 String username = parts[1];
                 String password = parts[2];
-                UserAccount newUser = new UserAccount(username, password);
-                Server.registerUser(newUser);
-                output.println("User registered: " + username);
-                break;
-
-            case "DEPOSIT":
-                // Nạp tiền: "DEPOSIT accountId amount"
-                int accountId = Integer.parseInt(parts[1]);
-                double amount = Double.parseDouble(parts[2]);
-                UserAccount account = Server.getUserAccount(accountId);
-                if (account != null) {
-                    account.deposit(amount);
-                    output.println("Deposit successful. New balance: " + account.getBalance());
-                } else {
-                    output.println("Account not found.");
+                try {
+                    UserAccount newUser = new UserAccount(username, password);
+                    UserDto.registerUser(newUser);
+                    output.println("User registered: " + username);
+                } catch (SQLException e) {
+                    output.println("Error registering user: " + e.getMessage());
                 }
                 break;
 
-            // Thêm các trường hợp khác: gọi món, thanh toán...
-            default:
-                output.println("Unknown command.");
+            case "DEPOSIT":
+                int accountId = Integer.parseInt(parts[1]);
+                double amount = Double.parseDouble(parts[2]);
+                try {
+                	UserDto.depositToUser(accountId, amount);
+                    output.println("Deposit successful. New balance: " + amount);
+                } catch (SQLException e) {
+                    output.println("Error during deposit: " + e.getMessage());
+                }
+                break;
+
+            case "GET_MENU":
+                try {
+                    List<MenuItem> menu = MenuItemDto.getAllMenuItems();
+                    for (MenuItem item : menu) {
+                        output.println(item.toString());
+                    }
+                } catch (SQLException e) {
+                    output.println("Error retrieving menu: " + e.getMessage());
+                }
+                break;
+
+            // Xử lý các lệnh khác: ORDER_FOOD, VIEW_ORDERS, ...
+                // Xử lý các lệnh khác, ví dụ gọi món hoặc tính giờ chơi
+            case "ORDER_FOOD":
+            	
+               
+                
+                try {
+                	 accountId = Integer.parseInt(parts[1]);
+                     int menuItemId = Integer.parseInt(parts[2]);
+                     int quantity = Integer.parseInt(parts[3]);
+                     double totalCost = MenuItemDto.getMenuItemById(menuItemId).getPrice()* quantity;
+                	UserDto.deductFromUser(accountId, totalCost);
+                    output.println("Order successful. Remaining balance: " + UserDto.getUserBalance(accountId));
+                } catch (SQLException e) {
+                    output.println("Order failed: " + e.getMessage());
+                }
+                break;
+        }
         }
     }
-}
+
+

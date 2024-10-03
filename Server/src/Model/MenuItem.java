@@ -6,8 +6,8 @@ public class MenuItem {
     private String name;
     private double price;
 
-    public MenuItem(String name, double price) {
-        this.itemId = ++itemCounter;
+    public MenuItem(int id , String name, double price) {
+        this.itemId = id;
         this.name = name;
         this.price = price;
     }

@@ -13,13 +13,22 @@ public class UserAccount {
         this.password = password;
         this.balance = 0.0; // Khởi tạo tài khoản với số dư 0
     }
-
+    public UserAccount(int id , String username, String password , double balance) {
+        this.accountId = id;
+        this.username = username;
+        this.password = password;
+        this.balance = balance; // Khởi tạo tài khoản với số dư 0
+    }
+    
     public int getAccountId() {
         return accountId;
     }
 
     public String getUsername() {
         return username;
+    }
+    public String getPassword() {
+        return password;
     }
 
     public double getBalance() {

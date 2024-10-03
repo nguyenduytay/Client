@@ -1,4 +1,9 @@
-package Model;
+package Controller;
+
+import Model.MenuItem;
+import Model.Order;
+import Model.UserAccount;
+
 public class FoodServiceManager {
     private Order currentOrder;
     private UserAccount userAccount;
