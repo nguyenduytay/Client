@@ -1,41 +1,55 @@
 package Controller;
 
 import Model.MenuItem;
-import Model.Order;
-import Model.UserAccount;
+import Model.OrderItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FoodServiceManager {
-    private Order currentOrder;
-    private UserAccount userAccount;
+    private List<OrderItem> currentOrderItems;
 
-    public FoodServiceManager(UserAccount userAccount) {
-        this.userAccount = userAccount;
-        this.currentOrder = new Order();
+    public FoodServiceManager() {
+        this.currentOrderItems = new ArrayList<>();
     }
 
-    public void addItemToOrder(MenuItem item, int quantity) {
-        currentOrder.addItem(item, quantity);
-    }
-
-    public void removeItemFromOrder(MenuItem item) {
-        currentOrder.removeItem(item);
-    }
-
-    public void checkout(boolean payWithAccountBalance) {
-        double totalCost = currentOrder.getTotalCost();
-        if (payWithAccountBalance) {
-            if (userAccount.withdraw(totalCost)) {
-                System.out.println("Payment for Order ID: " + currentOrder.getOrderId() + " successful.");
-            } else {
-                System.out.println("Payment failed. Insufficient balance.");
+    public void addItem(MenuItem item, int quantity) {
+        // Kiểm tra nếu món ăn đã tồn tại trong đơn hàng
+        for (OrderItem orderItem : currentOrderItems) {
+            if (orderItem.getItem().getName().equals(item.getName())) {
+                // Cập nhật số lượng nếu món ăn đã tồn tại
+                orderItem.setQuantity(orderItem.getQuantity() + quantity);
+                return;
             }
-        } else {
-            System.out.println("Please pay " + totalCost + " VND separately.");
         }
+        // Nếu không, thêm món ăn mới vào đơn hàng
+        currentOrderItems.add(new OrderItem(item, quantity));
+    }
+
+    public void removeItem(MenuItem item) {
+        // Xóa món ăn khỏi đơn hàng nếu có
+        currentOrderItems.removeIf(orderItem -> orderItem.getItem().getName().equals(item.getName()));
+    }
+
+    public List<OrderItem> getCurrentOrderItems() {
+        return currentOrderItems;
+    }
+
+    public double calculateTotal() {
+        // Tính tổng giá của đơn hàng
+        return currentOrderItems.stream().mapToDouble(OrderItem::getTotalPrice).sum();
     }
 
     public void displayOrder() {
-        currentOrder.displayOrder();
+        // Hiển thị danh sách các món ăn trong đơn hàng
+        if (currentOrderItems.isEmpty()) {
+            System.out.println("No items in the order.");
+        } else {
+            System.out.println("Current order items:");
+            for (OrderItem orderItem : currentOrderItems) {
+                System.out.println(orderItem);
+            }
+            System.out.println("Total: " + calculateTotal() + " VND");
+        }
     }
 }
-

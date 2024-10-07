@@ -11,7 +11,6 @@ import DatabaseConnection.DBConnection;
 import Model.MenuItem;
 
 public class MenuItemDto {
-	// Lấy danh sách món ăn từ cơ sở dữ liệu
     public static List<MenuItem> getAllMenuItems() throws SQLException {
         String query = "SELECT * FROM MenuItems";
         List<MenuItem> menuItems = new ArrayList<>();
