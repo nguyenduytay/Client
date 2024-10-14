@@ -7,6 +7,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/javafx"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/jar_files/fontawesomefx-8.2.jar"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/User"/>
+	<classpathentry kind="lib" path="mysql-connector-java-8.0.28.jar"/>
+>>>>>>> branch 'master' of https://github.com/TVinhNguyen/Client.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
