@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/javafx"/>
+	<classpathentry kind="lib" path="D:/jar_files/fontawesomefx-8.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
