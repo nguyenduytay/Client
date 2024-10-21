@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content" layoutY="92.0" prefHeight="674.0" prefWidth="1400.0" stylesheets="@client.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+         <children>
+            <HBox prefHeight="645.0" prefWidth="1400.0">
+               <children>
+                  <StackPane prefHeight="655.0" prefWidth="930.0">
+                     <children>
+                        <Pane prefHeight="500.0" prefWidth="498.0" styleClass="fx-color-background-black-gray_up" stylesheets="@client.css" />
+                  <GridPane hgap="30.0" vgap="30.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <StackPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </StackPane.margin>
+                     <children>
+                        <ImageView fitHeight="195.0" fitWidth="165.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../image/counter_strike.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="195.0" fitWidth="165.0" pickOnBounds="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../image/dota2.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="195.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@../image/cyper-punk.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </StackPane>
+                  <StackPane prefHeight="637.0" prefWidth="398.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="fx-color-background-black-gray_up" stylesheets="@client.css">
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </Pane>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="fx-set-border-hbox" stylesheets="@client.css">
+                                 <children>
+                                    <ImageView fx:id="avatarImageView" fitHeight="83.0" fitWidth="106.0" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, black, 10, 0.5, 0, 0);">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@../image/Designer.jpeg" />
+                                       </image></ImageView>
+                                    <VBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="186.0">
+                                       <children>
+                                          <Label fx:id="nameUser" prefHeight="27.0" prefWidth="173.0" text="Thanh Vinh" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="rankUser" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: #8B0000; -fx-text-fill: white; -fx-padding: 5; -fx-background-radius: 5;" text="Newbie" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="ARROW_RIGHT" selectionEnd="0" size="20">
+                                       <HBox.margin>
+                                          <Insets bottom="40.0" left="80.0" />
+                                       </HBox.margin>
+                                    </FontAwesomeIcon>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="fx-set-border-hbox" stylesheets="@client.css">
+                                 <children>
+                                    <VBox prefHeight="99.0" prefWidth="191.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label text="Ngừng sau ~ hh: mm" textFill="#767676">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="175.0" text="10:00" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="99.0" prefWidth="191.0">
+                                       <children>
+                                          <Label text="Giá cước" textFill="#767676">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="40.0" prefWidth="190.0" text="15.000đ/h" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="28.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="198.0" prefWidth="398.0" styleClass="fx-set-border-hbox" stylesheets="@client.css">
+                                 <children>
+                                    <VBox prefHeight="175.0" prefWidth="378.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label prefHeight="26.0" prefWidth="205.0" text="Chiết khấu" textFill="#767676">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox prefHeight="34.0" prefWidth="378.0" spacing="120.0">
+                                             <children>
+                                                <Label prefHeight="36.0" prefWidth="41.0" text="0%" textFill="#767676">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="36.0" prefWidth="57.0" text="50%" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="25.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="36.0" prefWidth="51.0" text="100%" textFill="#767676">
+                                                   <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Pane>
+                                             <VBox.margin>
+                                                <Insets top="2.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Slider layoutX="2.0" layoutY="1.0" majorTickUnit="100" max="200" min="0" minorTickCount="1" prefHeight="38.0" prefWidth="356.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="100" fx:id="xpSlider" />
+                                             </children>
+                                          </Pane>
+                                          <StackPane>
+                                             <children>
+                                                <HBox prefHeight="34.0" prefWidth="378.0" spacing="120.0">
+                                                   <children>
+                                                      <Label prefHeight="34.0" prefWidth="49.0" text="0XP" textFill="#767676">
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="34.0" prefWidth="63.0" text="100XP" textFill="#776677">
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="34.0" prefWidth="69.0" text="200XP" textFill="#767676">
+                                                         <font>
+                                                            <Font name="System Bold" size="15.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <Label text="120XP" textFill="WHITE" fx:id="xpLabel">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                   <StackPane.margin>
+                                                      <Insets left="100.0" />
+                                                   </StackPane.margin>
+                                                </Label>
+                                             </children>
+                                          </StackPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="250.0" prefWidth="398.0" stylesheets="@client.css">
+                                 <children>
+                                    <VBox prefHeight="250.0" prefWidth="392.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label prefHeight="26.0" prefWidth="110.0" text="Số dư ~ VND" textFill="#767676">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label prefHeight="54.0" prefWidth="391.0" text="100.000" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="btnNap" mnemonicParsing="false" prefHeight="57.0" prefWidth="386.0" style="-fx-background-color: #8B0000; -fx-text-fill: white; -fx-padding: 5; -fx-background-radius: 5;" text="Nạp Tài Khoản">
+                                             <font>
+                                                <Font name="System Bold" size="19.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children></AnchorPane>
