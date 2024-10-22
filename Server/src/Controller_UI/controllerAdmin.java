@@ -1,5 +1,5 @@
 package Controller_UI;
-
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.input.MouseEvent;
@@ -9,14 +9,15 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
-
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 
-public class Mycontroller {
+public class controllerAdmin {
 @FXML
 private Label lableTime;
 @FXML
@@ -78,6 +79,44 @@ private AnchorPane formSale;
 private AnchorPane formStaff;
 
 @FXML
+private AnchorPane chartComputer;
+
+@FXML
+private AnchorPane chartGenus;
+
+@FXML
+private AnchorPane chartGuest;
+
+@FXML
+private AnchorPane chartRevenue;
+
+@FXML
+private AnchorPane payment;
+
+@FXML
+private ComboBox<String> comboboxSelectChart;
+
+@FXML
+private ComboBox<String> comboboxComputerMonth;
+
+@FXML
+private ComboBox<String> comboboxGuestMonth;
+
+@FXML
+private ComboBox<String> comboboxComputerYear;
+
+@FXML
+private ComboBox<String> comboboxGuestYear;
+
+@FXML
+private ComboBox<String> comboboxSelectGenus;
+
+@FXML
+private ComboBox<String> comboboxSelectRevenue;
+
+
+
+@FXML
 public void initialize()
 {
 	 updateTime();
@@ -122,8 +161,74 @@ public void initialize()
      for ( Map.Entry<FontAwesomeIcon, Separator> icon : list1.entrySet()) {
     	 setClickMenu(icon.getKey(),icon.getValue(),listMenu,listRow,list2);
          setHoverMenu(icon.getKey());   
-     }		 
+     }
+     
+    
+     comboboxChart(comboboxSelectChart,comboboxComputerMonth,comboboxComputerYear,
+    		       comboboxGuestMonth,comboboxGuestYear,comboboxSelectGenus,
+    		       comboboxSelectRevenue);
+     
+     //sự kiện combobox hiện màn hình thống kê
+     AnchorPane[] listChart= {chartRevenue,chartGuest,chartGenus,chartComputer,payment};
+     listChart[0].setVisible(true);
+     comboboxSelectChart.setOnAction(event -> {
+    		for(AnchorPane x: listChart)
+    		{
+    			x.setVisible(false);
+    		}
+    		String value=comboboxSelectChart.getValue();
+    		try {
+    			int i=comboboxSelectChart.getItems().indexOf(value);
+    			listChart[i].setVisible(true);
+    		} catch (Exception e) {
+    			System.out.println(e.getMessage());
+    		}	
+     });
 }
+//Thêm các lựa chọn cho combobox củabiểu đồ thống kê
+private void comboboxChart(ComboBox<String> comboboxSelectChart,ComboBox<String> comboboxComputerMonth,
+		                   ComboBox<String> comboboxComputerYear,ComboBox<String> comboboxGuestMonth,
+		                   ComboBox<String> comboboxGuestYear,ComboBox<String> comboboxSelectGenus,
+		                   ComboBox<String> comboboxSelectRevenue)
+{
+    
+	//Thêm các tùy chọn danh sách thống kê 
+        ObservableList<String> chartTypes = FXCollections.observableArrayList(
+            "Thống kê thu", "Thông số khách", "Thống kê chi", "Tỉ lệ chọn máy"
+        );
+        comboboxSelectChart.setItems(chartTypes);
+        comboboxSelectChart.setValue("Thống kê thu");
+        
+        //Thêm tùy chọn danh sách các tháng và năm cho combobox
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+        int currentMonth = currentDate.getMonthValue();
+        ObservableList<String> months = FXCollections.observableArrayList();
+        ObservableList<String> Years = FXCollections.observableArrayList();
+        for(int year=2020;year<=currentYear;year++)
+        {
+        	Years.add("Năm "+year);
+        }
+        for (int x = 1; x <= 12; x++) {
+            months.add("Tháng " + x);
+        }
+        comboboxComputerMonth.setItems(months);
+        comboboxComputerMonth.setValue("Tháng " + currentMonth );
+        comboboxGuestMonth.setItems(months);
+        comboboxGuestMonth.setValue("Tháng " + currentMonth);
+        comboboxComputerYear.setItems(Years);
+        comboboxComputerYear.setValue("Năm " + currentYear);
+        comboboxGuestYear.setItems(Years);
+        comboboxGuestYear.setValue("Năm " + currentYear);
+        
+        //Thêm tùy chọn ngày, tháng, năm vào combobox
+        ObservableList<String> x = FXCollections.observableArrayList(
+                "Ngày", "Tháng", "Năm"
+            );
+        comboboxSelectRevenue.setItems(x);
+        comboboxSelectGenus.setItems(x);
+}
+
 //cập nhật thời gian
 private void updateTime()
 {
@@ -155,7 +260,7 @@ private void setHoverEffect(FontAwesomeIcon icon) {
     	icon.setFill(Color.WHITE);  
     });
     icon.setOnMouseExited(event -> {
-    	icon.setFill(Color.BLACK);
+    	icon.setFill(Color.WHITE);
     });
 }
 //sự kiện khi di chuột tới 
@@ -176,11 +281,11 @@ private void setClickMenu(FontAwesomeIcon icon,Separator separator, FontAwesomeI
     	for (FontAwesomeIcon x : lisMenu) {
     		if(x==icon)
     		{
-    		    x.setFill(Color.web("#c4c8cf")); 
+    		    x.setFill(Color.RED); 
     		}
     		else
     		{
-    	         x.setFill(Color.BLACK);
+    	         x.setFill(Color.WHITE);
     		}
    
         }
@@ -208,6 +313,17 @@ private void setClickMenu(FontAwesomeIcon icon,Separator separator, FontAwesomeI
     	}
         
     });
+}
+
+@FXML
+private void showForm(MouseEvent event)
+{
+	 AnchorPane[] listChart= {chartRevenue,chartGuest,chartGenus,chartComputer};
+	 for(AnchorPane chart:listChart)
+	 {
+		 chart.setVisible(false);
+	 }
+	 payment.setVisible(true);
 }
 }
 

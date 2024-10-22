@@ -2,40 +2,137 @@
 
 .form{
     
--fx-background-color: linear-gradient(to bottom right, #b41e13, #a65149);
+-fx-background-color: #000000;
 -fx-border-color: #000;
 -fx-border-width: .4px 0px .4px .4px;
 }
-
-.icon {
-    -fx-cursor: hand; /* Thay đổi con trỏ chuột thành tay */
+.form1
+{
+	-fx-background-color: #303030;
 }
-
-.separator {
-    -fx-background-color: black; 
+.icon {
+    -fx-cursor: hand;
 }
 
 .image_dish {
-    -fx-border-color: black;  /* Viền màu đỏ */
-    -fx-border-width: 1px;    /* Độ dày của viền */
+    -fx-border-color: black;  
+    -fx-border-width: 1px;    
 }
 
 .textfield{
-	-fx-background-color: linear-gradient(to bottom,#efefef, #eee);
+	-fx-background-color:#303030;
 	-fx-background-radius:4px;
 	-fx-border-color:#000;
 	-fx-border-width:1px;
 	-fx-border-radius:4px;
 	-fx-font-size:13px;
 	-fx-font-family:"Arial";
+	 -fx-text-fill:white;
 }
-.separator {
-    -fx-background-color: black;  /* Màu của separator */
-    -fx-border-width: 0.5px;        /* Độ dày của đường viền */
+.separator_menu {
+    -fx-background-color: red;  /* Màu của separator */
+    -fx-border-width: 1px;        /* Độ dày của đường viền */
+}
+.lable_title
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:26px;
+	-fx-background-color:#303030;
+	-fx-text-fill:white;
+}
+.lable1
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:14px;
+	-fx-text-fill:white;
+}
+.lable2
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:20px;
+	-fx-text-fill:white;
 }
 .button{
-	
+	-fx-font-family:"Arial";
+	-fx-font-size:12px;
+	-fx-font-weight: bold;
+	-fx-background-color:#CC0000;
+	-fx-text-fill:white;
 }
 .radiobutton{
 	
+}
+.table-view .column-header-background {
+    -fx-background-color: black;
+    -fx-text-fill: #ffffff; 
+}
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff; 
+    -fx-background-color: #101010; 
+}
+.table-view .table-cell {
+    -fx-border-color:black ; 
+    -fx-padding: 1px; 
+}
+.table-view .column-header {
+    -fx-border-color: black; 
+    -fx-padding: 0px;
+}
+.combo-box {
+    -fx-background-color: #303030;   /* Màu nền cho ComboBox */
+    -fx-text-fill: white;            /* Màu chữ trắng */
+    -fx-border-color: black;         /* Đường viền đen */
+    -fx-border-width: 1px;           /* Độ rộng của đường viền */
+}
+
+/* Màu nền và màu chữ của các mục trong danh sách ComboBox */
+.combo-box .list-cell {
+    -fx-text-fill: white;            /* Màu chữ trắng cho các mục */
+}
+
+/* Thay đổi màu nền khi sổ danh sách xuống */
+.combo-box-popup .list-view {
+    -fx-background-color: #303030;   /* Màu nền của danh sách khi sổ xuống */
+}
+
+/* Màu nền và chữ của các mục khi sổ ComboBox */
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #303030;   /* Màu nền của các mục */
+    -fx-text-fill: white;            /* Màu chữ của các mục */
+}
+
+/* Thay đổi màu nền khi rê chuột qua từng mục */
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: red; /* Màu nền khi rê chuột */
+}
+
+.date-picker {
+    -fx-background-color: #303030; 
+    -fx-text-fill: white; 
+}
+
+/* Thay đổi màu nền và màu chữ của DatePicker */
+.date-picker {
+    -fx-background-color: #303030; /* Màu nền xanh dương */
+    -fx-text-fill: white;           /* Màu chữ trắng */
+}
+
+/* Thay đổi màu nền của text field bên trong DatePicker */
+.date-picker .text-field {
+    -fx-background-color: #303030; /* Màu nền cho text field */
+    -fx-text-fill: white;          /* Màu chữ trong text field */
+}
+
+/* Thay đổi màu của mũi tên trong DatePicker */
+.date-picker .arrow-button {
+    -fx-background-color: #303030; /* Màu nền mũi tên */
+}
+
+.chart .axis-label {
+    -fx-text-fill: White; /* Màu đỏ cho nhãn trục */
+}
+
+/* Thay đổi màu chữ của các giá trị trên trục  */
+.chart .axis .tick-label {
+    -fx-text-fill: #00FF00; /* Màu xanh lá cây cho tick labels */
 }
