@@ -2,14 +2,35 @@
 		-fx-background-color : black;
 }
 .fx-color-background-black-gray {
-	-fx-background-color: RGB(18,18,18);
+	-fx-background-color: RGB(30,30,30,0.9);
 }
 .fx-color-background-black-gray_up {
-	-fx-background-color: RGB(40,40,40);
+	-fx-background-color: RGB(40,40,40,0.6);
+	 -fx-background-radius: 15;
 }
 .fx-color-background-red{
 		-fx-background-color : red;
 }
 .fx-color-background-transparent{
 		-fx-background-color : transparent;
+}
+.fx-set-border-hbox {
+	-fx-border-color: transparent transparent gray transparent;
+	-fx-border-width: 0 0 1 0;
+}
+
+.slider {
+    -fx-background-color: transparent;
+}
+
+.slider .thumb {
+    -fx-background-color: #FF0000; /* Màu đỏ cho thumb */
+}
+
+.slider .track {
+    -fx-background-color: #8B0000; /* Màu đỏ cho track */
+}
+.button.selected {
+	-fx-border-width: 0 0 2 0;
+	-fx-border-color: transparent transparent #8B0000 transparent;
 }
