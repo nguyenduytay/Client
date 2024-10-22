@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="774.0" prefWidth="70.0" styleClass="form_color1" stylesheets="@applicationUser.css">
+               <children>
+                  <FontAwesomeIcon fx:id="setting" fill="WHITE" glyphName="GEAR" layoutX="21.0" layoutY="738.0" size="45" />
+                  <Separator fx:id="h1" layoutX="-1.0" layoutY="20.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationUser.css" />
+                  <Separator fx:id="h2" layoutX="-1.0" layoutY="90.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationUser.css" />
+                  <Separator fx:id="h3" layoutX="-1.0" layoutY="160.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationUser.css" />
+                  <Separator fx:id="h4" layoutX="-1.0" layoutY="230.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationUser.css" />
+                  <VBox alignment="TOP_CENTER" layoutX="6.0" prefHeight="571.0" prefWidth="58.0" spacing="40.0">
+                     <children>
+                        <FontAwesomeIcon fx:id="computer" fill="WHITE" glyphName="DESKTOP" selectionEnd="0" selectionFill="#e70b0b" size="30" styleClass="icon" />
+                        <FontAwesomeIcon fx:id="menu" fill="WHITE" glyphName="BARS" selectionStart="0" size="30" />
+                        <FontAwesomeIcon fx:id="history" fill="WHITE" glyphName="HISTORY" size="30" styleClass="icon" />
+                        <FontAwesomeIcon fx:id="client" fill="WHITE" glyphName="BANK" size="30" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="70.0" prefHeight="39.0" prefWidth="1080.0" styleClass="form_color1" stylesheets="@applicationUser.css">
+               <children>
+                  <FontAwesomeIcon fx:id="minus" fill="WHITE" glyphName="MINUS" layoutX="996.0" layoutY="25.0" onMouseClicked="#handleMinus" size="20" />
+                  <FontAwesomeIcon fx:id="close" fill="WHITE" glyphName="CLOSE" layoutX="1025.0" layoutY="25.0" onMouseClicked="#handleClose" size="20" styleClass="icon" textAlignment="CENTER" wrappingWidth="34.20001220703125" />
+                  <Label fx:id="lableTime" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="306.0" text="00:00  01-01-00" textFill="#e71207">
+                     <font>
+                        <Font name="Arial" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="636.0" layoutY="7.0" prefHeight="26.0" prefWidth="190.0" text="Tên người dùng" textAlignment="CENTER" textFill="#ea0f0f">
+                     <font>
+                        <Font name="Arial" size="16.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon fx:id="bell" fill="#fafafa" glyphName="BELL" layoutX="942.0" layoutY="24.0" size="15" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="69.0" layoutY="39.0" prefHeight="734.0" prefWidth="1080.0" stylesheets="@applicationUser.css">
+               <children>
+                  <Pane prefHeight="67.0" prefWidth="1080.0" styleClass="image_boder" stylesheets="@applicationUser.css">
+                     <children>
+                        <TextField layoutX="40.0" layoutY="21.0" prefHeight="25.0" prefWidth="409.0" promptText="Tìm kiếm " styleClass="textfield" stylesheets="@applicationUser.css">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="78.0" prefHeight="654.0" prefWidth="1080.0" stylesheets="@applicationUser.css">
+                     <children>
+                        <FlowPane hgap="10.0" prefHeight="654.0" prefWidth="1080.0" vgap="10.0">
+                           <children>
+                              <Pane prefHeight="102.0" prefWidth="113.0" styleClass="image_boder" stylesheets="@applicationUser.css">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="DESKTOP" layoutX="42.0" layoutY="47.0" size="25" />
+                                    <Label layoutX="39.0" layoutY="59.0" styleClass="lable1" stylesheets="@applicationUser.css" text="Máy 1" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="102.0" prefWidth="113.0" stylesheets="@applicationUser.css">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="DESKTOP" layoutX="42.0" layoutY="47.0" size="25" />
+                                    <Label layoutX="39.0" layoutY="59.0" styleClass="lable1" stylesheets="@applicationUser.css" text="Máy 1" />
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="image_boder" />
+                                    <String fx:value="test1" />
+                                 </styleClass>
+                              </Pane>
+                              <Pane prefHeight="102.0" prefWidth="113.0" styleClass="image_boder" stylesheets="@applicationUser.css">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="DESKTOP" layoutX="42.0" layoutY="47.0" size="25" />
+                                    <Label layoutX="39.0" layoutY="59.0" styleClass="lable1" stylesheets="@applicationUser.css" text="Máy 1" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="102.0" prefWidth="113.0" styleClass="test2" stylesheets="@applicationUser.css">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="DESKTOP" layoutX="42.0" layoutY="47.0" size="25" />
+                                    <Label layoutX="39.0" layoutY="59.0" styleClass="lable1" stylesheets="@applicationUser.css" text="Máy 1" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="102.0" prefWidth="113.0" styleClass="image_boder" stylesheets="@applicationUser.css">
+                                 <children>
+                                    <FontAwesomeIcon glyphName="DESKTOP" layoutX="42.0" layoutY="47.0" size="25" />
+                                    <Label layoutX="39.0" layoutY="59.0" styleClass="lable1" stylesheets="@applicationUser.css" text="Máy 1" />
+                                 </children>
+                              </Pane>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" top="10.0" />
+                           </padding>
+                        </FlowPane>
+                     </children>
+                     <styleClass>
+                        <String fx:value="image_boder" />
+                        <String fx:value="form_color2" />
+                     </styleClass>
+                  </Pane>
+               </children>
+               <styleClass>
+                  <String fx:value="image_boder" />
+                  <String fx:value="form_color2" />
+               </styleClass></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

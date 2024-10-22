@@ -1,0 +1,55 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.form_color1{
+ -fx-background-color:#000000;
+ -fx-border-color: #000;
+ -fx-border-width: .4px 0px .4px .4px;
+}
+.form_color2
+{
+	-fx-background-color: #303030;
+}
+.separator_menu {
+    -fx-background-color: red;  
+    -fx-border-width: 1px;        
+}
+.image_boder{
+	-fx-border-color: black;  
+    -fx-border-width: 1px;    
+}
+.textfield{
+	-fx-background-color:#303030;
+	-fx-background-radius:4px;
+	-fx-border-color:#000;
+	-fx-border-width:1px;
+	-fx-border-radius:4px;
+	-fx-font-size:13px;
+	-fx-font-family:"Arial";
+	 -fx-text-fill:white;
+}
+.lable_title
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:26px;
+	-fx-background-color:#303030;
+	-fx-text-fill:white;
+}
+.lable1
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:14px;
+	-fx-text-fill:white;
+}
+.lable2
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:20px;
+	-fx-text-fill:white;
+}
+.test1{
+	-fx-border-color: #0edf54;  
+    -fx-border-width: 1px;
+}
+.test2{
+	-fx-border-color: red;  
+    -fx-border-width: 1px;
+}
