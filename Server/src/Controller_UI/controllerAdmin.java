@@ -314,7 +314,6 @@ private void setClickMenu(FontAwesomeIcon icon,Separator separator, FontAwesomeI
         
     });
 }
-
 @FXML
 private void showForm(MouseEvent event)
 {

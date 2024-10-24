@@ -49,7 +49,7 @@
                         <Insets top="30.0" />
                      </padding>
                   </VBox>
-                  <FontAwesomeIcon fx:id="setting" fill="WHITE" glyphName="GEAR" layoutX="21.0" layoutY="738.0" size="45" />
+                  <FontAwesomeIcon fx:id="setting" fill="WHITE" glyphName="GEAR" layoutX="16.0" layoutY="738.0" size="45" />
                   <Separator fx:id="h1" layoutX="2.0" layoutY="20.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationAdmin.css" />
                   <Separator fx:id="h2" layoutX="2.0" layoutY="90.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationAdmin.css" />
                   <Separator fx:id="h3" layoutX="2.0" layoutY="160.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="6.0" styleClass="separator_menu" stylesheets="@applicationAdmin.css" />
@@ -61,7 +61,7 @@
             <AnchorPane layoutX="66.0" prefHeight="39.0" prefWidth="1082.0" styleClass="form" stylesheets="@applicationAdmin.css">
                <children>
                   <FontAwesomeIcon fx:id="minus" fill="WHITE" glyphName="MINUS" layoutX="996.0" layoutY="25.0" onMouseClicked="#handleMinus" size="20" styleClass="icon" />
-                  <FontAwesomeIcon fx:id="close" fill="WHITE" glyphName="CLOSE" layoutX="1025.0" layoutY="25.0" onMouseClicked="#handleClose" size="20" styleClass="icon" textAlignment="CENTER" wrappingWidth="34.20001220703125" />
+                  <FontAwesomeIcon fx:id="close" fill="WHITE" glyphName="CLOSE" layoutX="1033.0" layoutY="24.0" onMouseClicked="#handleClose" size="20" styleClass="icon" textAlignment="CENTER" wrappingWidth="34.20001220703125" />
                   <Label fx:id="lableTime" contentDisplay="CENTER" layoutX="6.0" layoutY="8.0" prefHeight="25.0" prefWidth="306.0" text="00:00  01-01-00" textFill="#e71207">
                      <font>
                         <Font name="Arial" size="20.0" />
