@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="content" layoutY="92.0" prefHeight="674.0" prefWidth="1400.0" stylesheets="@Shop.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller_UI.ControllerShop">
+<AnchorPane fx:id="content" layoutY="92.0" prefHeight="674.0" prefWidth="1400.0" stylesheets="@Shop.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller_UI.ControllerShop">
          <children>
             <HBox prefHeight="645.0" prefWidth="1400.0">
                <children>

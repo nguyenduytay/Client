@@ -11,31 +11,47 @@ public class UserAccount {
         this.accountId = ++accountCounter;
         this.username = username;
         this.password = password;
-        this.balance = 0.0; // Khởi tạo tài khoản với số dư 0
+        this.balance = 0.0;
     }
     public UserAccount(int id , String username, String password , double balance) {
         this.accountId = id;
         this.username = username;
         this.password = password;
-        this.balance = balance; // Khởi tạo tài khoản với số dư 0
+        this.balance = balance; 
     }
-    
-    public int getAccountId() {
-        return accountId;
-    }
+   
 
-    public String getUsername() {
-        return username;
-    }
-    public String getPassword() {
-        return password;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void deposit(double amount) {
+    public static int getAccountCounter() {
+		return accountCounter;
+	}
+	public static void setAccountCounter(int accountCounter) {
+		UserAccount.accountCounter = accountCounter;
+	}
+	public int getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public void deposit(double amount) {
         balance += amount;
         System.out.println("Account ID: " + accountId + " deposited " + amount + " VND. Current balance: " + balance + " VND");
     }
@@ -48,5 +64,9 @@ public class UserAccount {
         }
         System.out.println("Account ID: " + accountId + " has insufficient balance.");
         return false;
+    }
+    @Override
+    public String toString() {
+        return accountId + "," + username + "," + password + "," + balance; 
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="602.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller_UI.ControllerLogin">
+   <children>
+      <VBox alignment="CENTER" prefHeight="456.0" prefWidth="424.0" spacing="20" style="-fx-background-color: #000000; -fx-background-radius: 20; -fx-padding: 30;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="50.0">
+    
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="62.0" prefWidth="234.0" style="-fx-font-size: 24; -fx-font-weight: bold;" text="Đăng nhập" textFill="white" />
+
+         <VBox fx:id="password" prefHeight="162.0" prefWidth="366.0" spacing="10">
+            <!-- Username Field -->
+            <Label prefHeight="0.0" prefWidth="105.0" style="-fx-font-family: 'Arial'; -fx-font-size: 14;" text="Tên đăng nhập" textFill="white">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Label>
+            <TextField fx:id="usernameField" prefHeight="61.0" prefWidth="351.0" promptText="Enter your username" style="-fx-background-radius: 20; -fx-prompt-text-fill: #C0C0C0; -fx-background-color: white; -fx-text-fill: black;">
+               <font>
+                  <Font size="15.0" />
+               </font></TextField>
+            
+            <!-- Password Field -->
+            <Label prefHeight="35.0" prefWidth="110.0" style="-fx-font-family: 'Arial'; -fx-font-size: 13;" text="Mật khẩu" textFill="white">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Label>
+            <PasswordField fx:id="passwordField" prefHeight="61.0" prefWidth="351.0" promptText="Enter your password" style="-fx-background-radius: 20; -fx-prompt-text-fill: #C0C0C0; -fx-background-color: white; -fx-text-fill: black;">
+               <font>
+                  <Font size="15.0" />
+               </font></PasswordField>
+         </VBox>
+
+         <!-- Login Button -->
+         <Button fx:id="login" maxWidth="235.0" prefHeight="53.0" prefWidth="234.0" style="-fx-background-color: #B22222; -fx-font-size:20; -fx-background-radius: 20; -fx-text-fill: white; -fx-font-weight: bold;" text="Đăng nhập">
+            <font>
+               <Font size="20.0" />
+            </font>
+            
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin></Button>
+         
+         <!-- Forgot Password -->
+         <Label alignment="CENTER" prefHeight="41.0" prefWidth="118.0" style="-fx-font-family: 'Arial'; -fx-font-size: 15;" text="Quên mật khẩu" textFill="#B22222" />
+      </VBox>
+   </children>
+</AnchorPane>

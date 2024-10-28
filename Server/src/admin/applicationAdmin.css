@@ -57,9 +57,7 @@
 	-fx-font-weight: bold;
 	-fx-background-color:#CC0000;
 	-fx-text-fill:white;
-}
-.radiobutton{
-	
+	-fx-pref-height: 30px;
 }
 .table-view .column-header-background {
     -fx-background-color: black;

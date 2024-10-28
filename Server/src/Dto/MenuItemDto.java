@@ -21,10 +21,11 @@ public class MenuItemDto {
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("menuItemId");
+                String linkImage = resultSet.getString("linkImage");
                 String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
-
-                menuItems.add(new MenuItem(id, name, price));
+                int quantity = resultSet.getInt("quantity");
+                menuItems.add(new MenuItem(id,linkImage ,name, price, quantity));
             }
         }
 
@@ -41,10 +42,12 @@ public class MenuItemDto {
 
             if (resultSet.next()) {
                 int id = resultSet.getInt("menuItemId");
+                String linkImage = resultSet.getString("linkImage");
                 String name = resultSet.getString("name");
                 double price = resultSet.getDouble("price");
+                int quantity = resultSet.getInt("quantity");
 
-                return new MenuItem(id, name, price);  // Trả về đối tượng MenuItem
+                return new MenuItem(id,linkImage ,name, price,quantity);
             }
         }
 

@@ -12,24 +12,51 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public MenuItem getItem() {
-        return item;
-    }
+    public static int getItemCounter() {
+		return itemCounter;
+	}
 
-    public int getQuantity() {
-        return quantity;
-    }
+
+	public static void setItemCounter(int itemCounter) {
+		OrderItem.itemCounter = itemCounter;
+	}
+
+
+	public int getItemId() {
+		return itemId;
+	}
+
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+
+	public MenuItem getItem() {
+		return item;
+	}
+
+
+	public void setItem(MenuItem item) {
+		this.item = item;
+	}
+
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 
     public double getTotalPrice() {
         return item.getPrice() * quantity;
     }
 
-    public int getItemId() {
-        return itemId;
-    }
-    public void setQuantity(int quantity) {
-    	this.quantity=  quantity;
-    }
+   
 
     @Override
     public String toString() {

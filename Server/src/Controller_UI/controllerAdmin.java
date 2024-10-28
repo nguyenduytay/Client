@@ -15,6 +15,8 @@ import javafx.fxml.FXML;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
+
+import Controller.Server;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 
 public class controllerAdmin {
@@ -113,7 +115,11 @@ private ComboBox<String> comboboxSelectGenus;
 
 @FXML
 private ComboBox<String> comboboxSelectRevenue;
-
+private Server server;
+public controllerAdmin() {
+	this.server = new Server(this);
+	new Thread(server).start();
+}
 
 
 @FXML
@@ -185,7 +191,6 @@ public void initialize()
     		}	
      });
 }
-//Thêm các lựa chọn cho combobox củabiểu đồ thống kê
 private void comboboxChart(ComboBox<String> comboboxSelectChart,ComboBox<String> comboboxComputerMonth,
 		                   ComboBox<String> comboboxComputerYear,ComboBox<String> comboboxGuestMonth,
 		                   ComboBox<String> comboboxGuestYear,ComboBox<String> comboboxSelectGenus,
