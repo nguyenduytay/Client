@@ -70,6 +70,6 @@
             </HBox>
          </children>
       </AnchorPane>
-      <fx:include source = "contentShop.fxml"  fx:id="currentContent"/>
+      <fx:include source = "contentHome.fxml"  fx:id="currentContent"/>
    </children>
 </AnchorPane>

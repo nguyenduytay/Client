@@ -2,6 +2,8 @@ package Controller;
 
 import Model.MenuItem;
 import Model.OrderItem;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -12,6 +14,8 @@ public class UserService {
     private PrintWriter output;
     private BufferedReader input;
     private FoodServiceManager foodService;
+    private boolean isLocked = false;
+
 
     public UserService(PrintWriter output, BufferedReader input) {
         this.output = output;
@@ -33,14 +37,22 @@ public class UserService {
 
     public void sendOrder() {
         double total = foodService.calculateTotal();
-        // Gửi order tới server
         output.println("SEND_ORDER " + total); // Chỉnh sửa theo định dạng yêu cầu của server
         System.out.println("Order sent. Total: " + total);
     }
 
     private double getItemPrice(String itemName) {
-        // Logic để lấy giá món ăn từ server hoặc từ danh sách món ăn
-        return 10.0; // Giá mặc định cho ví dụ
+        return 10.0; 
+    }
+    public void lockScreen() {
+        isLocked = true;
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Screen Locked");
+            alert.setHeaderText("Your screen is locked!");
+            alert.setContentText("Please enter the password to unlock.");
+            alert.showAndWait();
+        });
     }
     
     public List<OrderItem> getCurrentOrderItems() {

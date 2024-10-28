@@ -9,7 +9,6 @@ import DatabaseConnection.DBConnection;
 import Model.UserAccount;
 
 public class UserDto {
-	// Thêm người dùng mới vào cơ sở dữ liệu
     public static void registerUser(UserAccount user) throws SQLException {
         String query = "INSERT INTO UserAccounts (username, password, balance) VALUES (?, ?, ?)";
         
@@ -23,7 +22,6 @@ public class UserDto {
         }
     }
 
-    // Cập nhật số dư của người dùng
     public static void depositToUser(int accountId, double amount) throws SQLException {
         String query = "UPDATE UserAccounts SET balance = balance + ? WHERE accountId = ?";
         
@@ -35,7 +33,6 @@ public class UserDto {
             statement.executeUpdate();
         }
     }
-    // Lấy số dư của người dùng
     public static double getUserBalance(int accountId) throws SQLException {
         String query = "SELECT balance FROM UserAccounts WHERE accountId = ?";
         
@@ -67,24 +64,26 @@ public class UserDto {
         }
     }
 
-    public static UserAccount getUserById(int accountId) throws SQLException {
-        String query = "SELECT * FROM UserAccounts WHERE accountId = ?";
-        
+    public static UserAccount getByLogin(String username, String password) throws SQLException {
+        String query = "SELECT * FROM UserAccounts WHERE username = ? AND password = ?";
+
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, accountId);
+            statement.setString(1, username);
+            statement.setString(2, password); 
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
                 int id = resultSet.getInt("accountId");
-                String username = resultSet.getString("username");
-                String password = resultSet.getString("password");
+                String user = resultSet.getString("username");
+                String pass = resultSet.getString("password");
                 double balance = resultSet.getDouble("balance");
 
-                return new UserAccount(id, username, password, balance);  // Trả về đối tượng UserAccount
+                return new UserAccount(id, user, pass, balance);
             }
         }
 
-        return null;  // Nếu không tìm thấy tài khoản, trả về null
+        return null; 
     }
+
 }

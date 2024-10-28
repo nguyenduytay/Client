@@ -1,50 +1,84 @@
 package Controller;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 
-public class Client {
-    private static final String SERVER_ADDRESS = "localhost";
-    private static final int SERVER_PORT = 12345;
+import Controller_UI.ControllerLogin;
+import Utils.SocketManager;
 
-    public static void main(String[] args) {
-        try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
-             BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
-             Scanner scanner = new Scanner(System.in)) {
+public class Client implements Runnable {
+	private static Client instance;
+    private static boolean running = true; 
+    public static ControllerLogin controllerLogin;
+    public static String sendMessage;
+    public List<String> receiMessage = new ArrayList<>();
+    
+    public static Client getInstance() {
+        if (instance == null) {
+            instance = new Client();
+        }
+        new Thread(instance).start();
+        return instance;
+    }
+    @Override
+    public void run() {
+        SocketManager socketManager = SocketManager.getInstance();
+        BufferedReader input = socketManager.getInput();
+        PrintWriter output = socketManager.getOutput();
+        Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Connected to the server. You can start sending commands.");
+        System.out.println("Connected to the server. You can start sending commands.");
 
-            UserService userService = new UserService(output, input);
-            CommandHandler commandHandler = new CommandHandler(userService, scanner);
+        UserService userService = new UserService(output, input);
+        CommandHandler commandHandler = new CommandHandler(userService, scanner);
 
-            // Khởi động luồng để nhận phản hồi từ server
-            new Thread(() -> {
-                try {
-                    String response;
-                    while ((response = input.readLine()) != null) {
-                        System.out.println("Server response: " + response);
+        new Thread(() -> {
+            try {
+                String response;
+                while ((response = input.readLine()) != null) {
+                    System.out.println("Server response: " + response);
+                    if (response.equals("LOCK")) {
+                        userService.lockScreen();
                     }
-                } catch (IOException e) {
-                    System.out.println("Error reading from server: " + e.getMessage());
+                    receiMessage.add(response);
+                    
                 }
-            }).start();
+            } catch (IOException e) {
+                System.out.println("Error reading from server: " + e.getMessage());
+            }
+        }).start();
 
-            while (true) {
-                System.out.print("Enter command (ADD_ITEM, REMOVE_ITEM, SEND_ORDER, VIEW_ORDER, or 'exit' to quit): ");
-                String command = scanner.nextLine();
-
-                if ("exit".equalsIgnoreCase(command)) {
-                    break;
+        Thread sendThread = new Thread(() -> {
+            try {
+                while (running) {
+                	if(sendMessage != "") {
+                		output.println(sendMessage);
+                		sendMessage = "";
+                	}
                 }
+            } catch (Exception e) {
+                System.out.println("Send thread interrupted: " + e.getMessage());
+            }
+        });
+        sendThread.start();
 
-                commandHandler.handleCommand(command);
+        while (true) {
+            System.out.print("Enter command (ADD_ITEM, REMOVE_ITEM, SEND_ORDER, VIEW_ORDER, or 'exit' to quit): ");
+            String command = scanner.nextLine();
+
+            if ("exit".equalsIgnoreCase(command)) {
+                running = false;
+                break;
             }
 
-        } catch (IOException ex) {
-            System.out.println("Client exception: " + ex.getMessage());
-            ex.printStackTrace();
+            commandHandler.handleCommand(command);
         }
+
+        socketManager.close();
     }
 }

@@ -1,5 +1,6 @@
 package Controller_UI;
 
+import Controller.Client;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -18,6 +19,7 @@ import javafx.util.Duration;
 
 
 public class ControllerBar {
+	
 		@FXML
 		private AnchorPane mainContainer;
 		
@@ -32,6 +34,11 @@ public class ControllerBar {
 		 * 
 		 * @FXML private Label xpLabel;
 		 */
+		private Client client;
+		public ControllerBar() {
+			client = Client.getInstance();
+			
+		}
 	    @FXML
 	    public void initialize() {
 	        currentContent = mainContainer.lookup("#content");  // Giả sử Node hiện tại có id là "content"
@@ -49,6 +56,9 @@ public class ControllerBar {
 	        		break;
 	        	case "gamesButton":
 	        		loadContent("../application/contentGame.fxml");
+	        		break;
+	        	case "shopButton":
+	        		loadContent("../application/shop.fxml");
 	        		break;
 	        	default: break;
 	        }
@@ -74,7 +84,6 @@ public class ControllerBar {
 	        }
 	    }
 	    public Node getNodeById(String id) {
-	        // Tìm kiếm Node có id là "content"
 	        return mainContainer.lookup("#" + id);
 	    }
 		/*
