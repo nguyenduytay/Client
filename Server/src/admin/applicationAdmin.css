@@ -1,5 +1,4 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-
 .form{
     
 -fx-background-color: #000000;
@@ -58,9 +57,7 @@
 	-fx-font-weight: bold;
 	-fx-background-color:#CC0000;
 	-fx-text-fill:white;
-}
-.radiobutton{
-	
+	-fx-pref-height: 30px;
 }
 .table-view .column-header-background {
     -fx-background-color: black;

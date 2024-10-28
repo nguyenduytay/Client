@@ -45,6 +45,13 @@
 	-fx-font-size:20px;
 	-fx-text-fill:white;
 }
+.lable_menu
+{
+	-fx-font-family:"Arial";
+	-fx-font-size:14px;
+	-fx-text-fill:white;
+	 -fx-background-color:#000000;
+}
 .test1{
 	-fx-border-color: #0edf54;  
     -fx-border-width: 1px;
@@ -52,4 +59,59 @@
 .test2{
 	-fx-border-color: red;  
     -fx-border-width: 1px;
+}
+.test3
+{
+	-fx-background-color:#3c534d;
+}
+.combo-box {
+    -fx-background-color: #303030;   /* Màu nền cho ComboBox */
+    -fx-text-fill: white;            /* Màu chữ trắng */
+    -fx-border-color: black;         /* Đường viền đen */
+    -fx-border-width: 1px;           /* Độ rộng của đường viền */
+}
+
+/* Màu nền và màu chữ của các mục trong danh sách ComboBox */
+.combo-box .list-cell {
+    -fx-text-fill: white;            /* Màu chữ trắng cho các mục */
+}
+
+/* Thay đổi màu nền khi sổ danh sách xuống */
+.combo-box-popup .list-view {
+    -fx-background-color: #303030;   /* Màu nền của danh sách khi sổ xuống */
+}
+
+/* Màu nền và chữ của các mục khi sổ ComboBox */
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: #303030;   /* Màu nền của các mục */
+    -fx-text-fill: white;            /* Màu chữ của các mục */
+}
+
+/* Thay đổi màu nền khi rê chuột qua từng mục */
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: red; /* Màu nền khi rê chuột */
+}
+.button{
+	-fx-font-family:"Arial";
+	-fx-font-size:12px;
+	-fx-font-weight: bold;
+	-fx-background-color:#CC0000;
+	-fx-text-fill:white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: black;
+    -fx-text-fill: #ffffff; 
+}
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff; 
+    -fx-background-color: #101010; 
+}
+.table-view .table-cell {
+    -fx-border-color:black ; 
+    -fx-padding: 1px; 
+}
+.table-view .column-header {
+    -fx-border-color: black; 
+    -fx-padding: 0px;
 }
