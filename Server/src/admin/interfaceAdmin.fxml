@@ -394,7 +394,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="formHistory" layoutX="66.0" layoutY="39.0" prefHeight="735.0" prefWidth="1083.0" styleClass="form1" stylesheets="@applicationAdmin.css" visible="false">
+            <AnchorPane fx:id="formHistory" layoutX="66.0" layoutY="39.0" prefHeight="735.0" prefWidth="1083.0" styleClass="form1" stylesheets="@applicationAdmin.css">
                <children>
                   <AnchorPane layoutX="10.0" layoutY="142.0" prefHeight="581.0" prefWidth="1040.0" stylesheets="@applicationAdmin.css">
                      <children>
@@ -422,14 +422,14 @@
                            <content>
                               <TableView prefHeight="550.0" prefWidth="999.0" styleClass="form1" stylesheets="@applicationAdmin.css">
                                  <columns>
-                                    <TableColumn prefWidth="87.19999694824219" text="Mã Hóa Đơn" />
-                                    <TableColumn prefWidth="196.8000030517578" text="Tên Khách Hàng " />
+                                    <TableColumn prefWidth="140.00002133846283" text="Tên nhân viên" />
+                                    <TableColumn prefWidth="145.5999755859375" text="Tên Khách Hàng " />
                                     <TableColumn minWidth="2.4000244140625" prefWidth="83.199951171875" text="Máy" />
-                                    <TableColumn prefWidth="125.60009765625" text="Số Giờ Sử Dụng" />
-                                    <TableColumn prefWidth="120.0" text="Tổng Tiền" />
+                                    <TableColumn prefWidth="120.0" text="Mã giảm giá" />
                                     <TableColumn prefWidth="142.39996337890625" text="Ngày Thanh Toán" />
                                     <TableColumn minWidth="0.0" prefWidth="157.60003662109375" text="Hình Thức Thanh Toán " />
-                                    <TableColumn prefWidth="82.400146484375" text="Ghi Chú" />
+                                    <TableColumn prefWidth="96.00006103515625" text="Tổng tiền" />
+                                    <TableColumn prefWidth="109.60003662109375" text="Xem chi tiết" />
                                  </columns>
                               </TableView>
                            </content>
@@ -460,11 +460,12 @@
                               <TableView prefHeight="570.0" prefWidth="987.0" styleClass="form1" stylesheets="@applicationAdmin.css">
                                 <columns>
                                   <TableColumn prefWidth="107.99999690055847" text="Mã khách hàng" />
-                                  <TableColumn prefWidth="258.40003967285156" text="Tên khách hàng" />
-                                    <TableColumn prefWidth="217.5999755859375" text="Số điện thoại" />
-                                    <TableColumn prefWidth="124.0" text="ĐIểm" />
-                                    <TableColumn minWidth="0.0" prefWidth="156.79998779296875" text="Thời gian sử dụng" />
-                                    <TableColumn minWidth="0.0" prefWidth="127.9998779296875" text="Loại khách" />
+                                  <TableColumn prefWidth="227.20001983642578" text="Tên khách hàng" />
+                                    <TableColumn prefWidth="211.99990844726562" text="Số điện thoại" />
+                                    <TableColumn prefWidth="102.39996337890625" text="ĐIểm" />
+                                    <TableColumn minWidth="0.0" prefWidth="136.00006103515625" text="Thời gian sử dụng" />
+                                    <TableColumn minWidth="0.0" prefWidth="100.0" text="Tên tài khoản" />
+                                    <TableColumn prefWidth="99.9998779296875" text="Mật khẩu" />
                                 </columns>
                               </TableView>
                            </content>
@@ -497,13 +498,13 @@
                            <content>
                               <TableView prefHeight="562.0" prefWidth="999.0" styleClass="form1" stylesheets="@applicationAdmin.css">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" />
                                   <TableColumn prefWidth="148.79994201660156" text="Mã khuyến mãi" />
                                     <TableColumn prefWidth="161.59999084472656" text="Tên khuyến mãi" />
                                     <TableColumn prefWidth="151.19998168945312" text="Mức áp dụng" />
                                     <TableColumn prefWidth="194.39996337890625" text="Ngày bắt đầu" />
                                     <TableColumn prefWidth="139.20001220703125" text="Ngày kết thúc" />
                                     <TableColumn prefWidth="127.20012207031255" text="Trạng thái" />
+                                    <TableColumn prefWidth="75.0" text="Xem chi tiết" />
                                 </columns>
                               </TableView>
                            </content>
@@ -528,7 +529,7 @@
                      </children>
                   </AnchorPane>
                </children></AnchorPane>
-            <AnchorPane fx:id="formStaff" layoutX="66.0" layoutY="39.0" prefHeight="731.0" prefWidth="1082.0" styleClass="form1">
+            <AnchorPane fx:id="formStaff" layoutX="66.0" layoutY="39.0" prefHeight="731.0" prefWidth="1082.0" styleClass="form1" visible="false">
                <children>
                   <AnchorPane layoutX="8.0" layoutY="135.0" prefHeight="582.0" prefWidth="641.0" styleClass="image_dish" stylesheets="@applicationAdmin.css">
                      <children>
@@ -536,10 +537,11 @@
                            <content>
                               <TableView prefHeight="550.0" prefWidth="600.0" styleClass="form1" stylesheets="@applicationAdmin.css">
                                 <columns>
-                                  <TableColumn prefWidth="124.80000913143158" text="Mã nhân viên " />
-                                  <TableColumn prefWidth="174.39994049072266" text="Tên nhân viên" />
-                                    <TableColumn prefWidth="159.19998168945312" text="Số điện thoại" />
-                                    <TableColumn prefWidth="140.00003051757812" text="Chức vụ" />
+                                  <TableColumn prefWidth="159.20001983642578" text="Tên nhân viên" />
+                                    <TableColumn prefWidth="140.79995727539062" text="Số điện thoại" />
+                                    <TableColumn prefWidth="77.5999755859375" text="Ngày công" />
+                                    <TableColumn prefWidth="139.99993896484375" text="Chức vụ" />
+                                    <TableColumn prefWidth="80.800048828125" text="Xem" />
                                 </columns>
                               </TableView>
                            </content>
@@ -567,7 +569,7 @@
                         <Label layoutX="193.0" layoutY="14.0" styleClass="lable1" stylesheets="@applicationAdmin.css" text="Tên nhân viên" />
                         <TextField layoutX="193.0" layoutY="43.0" styleClass="textfield" stylesheets="@applicationAdmin.css" />
                         <Separator layoutX="193.0" layoutY="79.0" prefHeight="4.0" prefWidth="166.0" />
-                        <Label layoutX="20.0" layoutY="119.0" styleClass="lable1" stylesheets="@applicationAdmin.css" text="Chức năng" />
+                        <Label layoutX="20.0" layoutY="119.0" styleClass="lable1" stylesheets="@applicationAdmin.css" text="Chức vụ" />
                         <Separator layoutX="20.0" layoutY="199.0" prefHeight="4.0" prefWidth="254.0" />
                         <Label layoutX="20.0" layoutY="232.0" styleClass="lable1" stylesheets="@applicationAdmin.css" text="Số điện thoại" />
                         <TextField layoutX="20.0" layoutY="263.0" prefHeight="27.0" prefWidth="139.0" styleClass="textfield" stylesheets="@applicationAdmin.css" />
@@ -585,7 +587,7 @@
                         <Separator layoutX="20.0" layoutY="510.0" prefHeight="4.0" prefWidth="150.0" />
                         <Separator layoutX="215.0" layoutY="510.0" prefHeight="4.0" prefWidth="158.0" />
                         <Button layoutX="105.0" layoutY="543.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="202.0" text="Lưu" />
-                        <ComboBox layoutX="20.0" layoutY="161.0" prefHeight="26.0" prefWidth="254.0" promptText="Chức năng nhân viên" stylesheets="@applicationAdmin.css">
+                        <ComboBox layoutX="20.0" layoutY="161.0" prefHeight="26.0" prefWidth="254.0" promptText="Chức vụ nhân viên" stylesheets="@applicationAdmin.css">
                            <styleClass>
                               <String fx:value="combo-box" />
                               <String fx:value="combo-box-popup" />
