@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import Dto.MenuItemDto;
 import Dto.UserDto;
 import Model.ChatMessage;
-import Model.MenuItem;
+import Model.Item;
 import Model.UserAccount;
 
 class ClientHandler extends Thread {
@@ -116,8 +116,8 @@ class ClientHandler extends Thread {
 
         case "GET_MENU":
             try {
-                List<MenuItem> menu = MenuItemDto.getAllMenuItems();
-                for (MenuItem item : menu) {
+                List<Item> menu = MenuItemDto.getAllMenuItems();
+                for (Item item : menu) {
                     output.println(item.toString());
                 }
                 output.println("END"); // Dấu hiệu kết thúc
