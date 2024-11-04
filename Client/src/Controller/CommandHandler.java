@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.MenuItem;
+import Model.Item;
 
 import java.util.Scanner;
 
